@@ -180,6 +180,10 @@ section p {
     transform: translate(0, 0);
   }
 
+  header+section {
+    padding-top: 80px;
+  }
+
   section {
     padding: 30px 15px 10px;
   }
