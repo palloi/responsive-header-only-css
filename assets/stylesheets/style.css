@@ -25,13 +25,13 @@ body {
 }
 
 header {
-  height: 60px;
+  min-height: 60px;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   border-bottom: 1px solid #ccc;
-  background: #fff;
+  background: #ECECEC;
   z-index: 2;
 }
 
@@ -39,24 +39,36 @@ header h1 {
   padding: 10px 0 0 10px;
 }
 
-header ul {
-  padding: 10px 10px 0 0;
+header h1 a {
+  color: #333;
 }
 
-header ul li {
-  padding: 0 10px;
+header ul {
+  padding: 15px 10px 0 0;
+}
+
+header li {
   border-left: 1px solid #ccc;
 }
 
-header ul li:first-child {
+header li:first-child {
   border: none;
 }
 
-header ul li a {
+header li a {
   display: block;
-  color: #333;
+  padding: 0 10px;
+  color: #999;
   font-size: 16px;
   line-height: 30px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+header li a:hover {
+  color: #333;
 }
 
 header input[type="checkbox"] {
@@ -95,7 +107,7 @@ section p {
     display: block;
     width: 30px;
     padding: 5px 0;
-    border: solid #ccc;
+    border: solid #333;
     border-width: 3px 0;
     z-index: 2;
     cursor: pointer;
@@ -105,7 +117,7 @@ section p {
     content: "";
     display: block;
     height: 3px;
-    background: #ccc;
+    background: #333;
   }
 
   header .control-nav-close {
@@ -117,7 +129,9 @@ section p {
     display: block;
     z-index: 1;
     background: rgba(0,0,0,0.4);
+    -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
     transform: translate(100%, 0);
   }
 
@@ -131,7 +145,9 @@ section p {
     background: #fff;
     overflow-x: auto;
     z-index: 2;
+    -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
     transform: translate(100%, 0);
   }
 
@@ -141,21 +157,37 @@ section p {
 
   header ul.l2 li {
     width: 100%;
-    padding: 0;
     border: solid #ccc;
     border-width: 0 0 1px;
   }
 
-  header ul.l2 li a {
+  header li a {
     padding: 15px 10px;
+  }
+
+  header li a:hover {
+    background-color: #ccc;
   }
 
   /* checked nav */
   #control-nav:checked ~ .control-nav-close {
+    -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 
   #control-nav:checked ~ nav {
+    -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
+  }
+
+  section {
+    padding: 30px 15px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+    line-height: 40px
   }
 }
