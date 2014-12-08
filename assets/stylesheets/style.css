@@ -72,8 +72,10 @@ header li a:hover {
 }
 
 header input[type="checkbox"] {
+  display: none;
   position: absolute;
-  visibility: hidden;
+  left: -9999px;
+  opacity: 0;
 }
 
 /* content */
@@ -132,6 +134,7 @@ section p {
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
     -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
     transform: translate(100%, 0);
   }
 
@@ -148,6 +151,7 @@ section p {
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
     -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
     transform: translate(100%, 0);
   }
 
@@ -170,13 +174,28 @@ section p {
   }
 
   /* checked nav */
+  #control-nav {
+    display: block;
+  }
+
+  #control-nav:focus ~ .control-nav {
+    border-color: #000;
+    box-shadow: 0px 0px 9px rgba(0,0,0,0.3);
+  }
+
+  #control-nav:focus ~ .control-nav:before {
+    background: #000;
+  }
+
   #control-nav:checked ~ .control-nav-close {
     -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 
   #control-nav:checked ~ nav {
     -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
 
