@@ -72,7 +72,7 @@ header li a:hover {
 }
 
 header input[type="checkbox"] {
-  display: none;
+  visibility: hidden;
   position: absolute;
   left: -9999px;
   opacity: 0;
@@ -175,7 +175,7 @@ section p {
 
   /* checked nav */
   #control-nav {
-    display: block;
+    visibility: visible;
   }
 
   #control-nav:focus ~ .control-nav {
