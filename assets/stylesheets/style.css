@@ -12,12 +12,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 /* lists */
-.l1, .l1 li, .l2, .l2 li { width: 100%; float: left; display: block; position: relative; }
-.l2,.l2 li { width: auto; }
+.list-full, .list-full li,
+.list-auto, .list-auto li { width: 100%; float: left; display: block; position: relative; }
+.list-auto, .list-auto li { width: auto; }
 
 /* floats */
-.fL { float: left; }
-.fR { float: right; }
+.float-l { float: left; }
+.float-r { float: right; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -71,8 +72,8 @@ header li a:hover {
   color: #333;
 }
 
-header input[type="checkbox"] {
-  display: none;
+input#control-nav {
+  visibility: hidden;
   position: absolute;
   left: -9999px;
   opacity: 0;
@@ -102,42 +103,6 @@ section p {
 }
 
 @media screen and (max-width: 767px) {
-  header .control-nav { /* label icon */
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    display: block;
-    width: 30px;
-    padding: 5px 0;
-    border: solid #333;
-    border-width: 3px 0;
-    z-index: 2;
-    cursor: pointer;
-  }
-
-  header .control-nav:before {
-    content: "";
-    display: block;
-    height: 3px;
-    background: #333;
-  }
-
-  header .control-nav-close {
-    position: fixed; /* label layer */
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    z-index: 1;
-    background: rgba(0,0,0,0.4);
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-    -webkit-transform: translate(100%, 0);
-    -ms-transform: translate(100%, 0);
-    transform: translate(100%, 0);
-  }
-
   header nav {
     position: fixed;
     top: 0;
@@ -155,11 +120,11 @@ section p {
     transform: translate(100%, 0);
   }
 
-  header ul.l2 {
+  header ul.list-auto {
     padding: 0;
   }
 
-  header ul.l2 li {
+  header ul.list-auto li {
     width: 100%;
     border: solid #ccc;
     border-width: 0 0 1px;
@@ -173,27 +138,58 @@ section p {
     background-color: #ccc;
   }
 
+  .control-nav { /* label icon */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: block;
+    width: 30px;
+    padding: 5px 0;
+    border: solid #333;
+    border-width: 3px 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .control-nav:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #333;
+  }
+
+  .control-nav-close {
+    position: fixed; /* label layer */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+    background: rgba(0,0,0,0.4);
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+
   /* checked nav */
-  #control-nav {
+  input#control-nav {
     display: block;
   }
 
-  #control-nav:focus ~ .control-nav {
+  input#control-nav:focus ~ .control-nav {
     border-color: #000;
     box-shadow: 0px 0px 9px rgba(0,0,0,0.3);
   }
 
-  #control-nav:focus ~ .control-nav:before {
+  input#control-nav:focus ~ .control-nav:before {
     background: #000;
   }
 
-  #control-nav:checked ~ .control-nav-close {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
-  #control-nav:checked ~ nav {
+  input#control-nav:checked ~ nav,
+  input#control-nav:checked ~ .control-nav-close {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
@@ -211,6 +207,6 @@ section p {
 @media screen and (max-width: 480px) {
   header h1 {
     font-size: 20px;
-    line-height: 40px
+    line-height: 40px;
   }
 }
