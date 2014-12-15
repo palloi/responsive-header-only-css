@@ -23,6 +23,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  text-shadow: 0 1px 0 #fff;
 }
 
 header {
@@ -63,7 +64,6 @@ header li a {
   font-size: 16px;
   line-height: 30px;
   text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -100,6 +100,63 @@ section img {
 
 section p {
   padding: 0 0 20px;
+}
+
+.highlights {
+  position: relative;
+}
+
+.highlights input {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.highlights-item {
+  float: left;
+  margin: 0 0 0 2%;
+  width: 32%;
+}
+
+.highlights-item:first-of-type {
+  margin-left: 0;
+}
+
+.highlights-item img {
+  display: block;
+  width: 100%;
+  margin: 0 0 5px;
+}
+
+.highlights-item p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.highlights-buttons {
+  display: none;
+  clear: both;
+  text-align: center;
+}
+
+.highlights-buttons label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 10px; 
+  border-radius: 10px;
+  background-color: #ccc;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+  -webkit-transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
+}
+
+.highlights-buttons label:hover {
+  background-color: #777;
 }
 
 @media screen and (max-width: 767px) {
@@ -201,6 +258,55 @@ section p {
 
   section {
     padding: 30px 15px 10px;
+  }
+
+  .highlights {
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  }
+
+  .highlights-item {
+    width: 100%;
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  .highlights-item p {
+    opacity: 0;
+    -webkit-transition: opacity 500ms 500ms ease-in-out;
+    transition: opacity 500ms 500ms ease-in-out;
+  }
+
+  .highlights-buttons {
+    display: block;
+  }
+
+  /*checked*/
+  .highlights input:checked + div {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  .highlights input:checked + div p {
+    opacity: 1;
+  }
+
+  .highlights input:nth-of-type(1):checked ~ .highlights-buttons label:nth-child(1),
+  .highlights input:nth-of-type(2):checked ~ .highlights-buttons label:nth-child(2),
+  .highlights input:nth-of-type(3):checked ~ .highlights-buttons label:nth-child(3) {
+    background-color: #000
   }
 }
 
