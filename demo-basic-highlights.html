@@ -117,6 +117,38 @@
       section p {
         padding: 0 0 20px;
       }
+
+      .highlights {
+        position: relative;
+      }
+
+      .highlights input {
+        visibility: hidden;
+        position: absolute;
+        left: -9999px;
+        opacity: 0;
+      }
+
+      .highlights-item {
+        float: left;
+        margin: 0 0 0 2%;
+        width: 32%;
+      }
+
+      .highlights-item:first-of-type {
+        margin-left: 0;
+      }
+
+      .highlights-item img {
+        display: block;
+        width: 100%;
+        margin: 0 0 5px;
+      }
+
+      .highlights-item p {
+        font-size: 14px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -144,7 +176,6 @@
     </header>
 
     <section id="Chaves">
-      <img src="assets/images/chaves.jpg" class="float-r" />
       <p>
         <strong>Interpretado por:</strong> Roberto Goméz Bolaños.
       </p>
@@ -154,6 +185,22 @@
       <p>
         <strong>Frases:</strong> "Isso, isso, isso!" - "Foi sem querer querendo!" - "Ninguém tem paciência comigo!" - "É que me escapuliu!" - "Zas, zas e zas...
       </p>
+      <div class="highlights">
+        <div class="highlights-item">
+          <img src="assets/images/chaves.jpg" />
+          <p>Olha o Chaves sorrindo</p>
+        </div>
+
+        <div class="highlights-item">
+          <img src="assets/images/chaves-2.jpg" />
+          <p>Pensando na Paty</p>
+        </div>
+
+        <div class="highlights-item">
+          <img src="assets/images/chaves-3.jpg" />
+          <p>Quero tanto esse sanduiche iche iche</p>
+        </div>
+      </div>
     </section>
 
     <section id="Chiquinha">

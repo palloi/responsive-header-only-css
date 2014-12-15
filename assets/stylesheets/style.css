@@ -12,16 +12,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 /* lists */
-.l1, .l1 li, .l2, .l2 li { width: 100%; float: left; display: block; position: relative; }
-.l2,.l2 li { width: auto; }
+.list-full, .list-full li,
+.list-auto, .list-auto li { width: 100%; float: left; display: block; position: relative; }
+.list-auto, .list-auto li { width: auto; }
 
 /* floats */
-.fL { float: left; }
-.fR { float: right; }
+.float-l { float: left; }
+.float-r { float: right; }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  text-shadow: 0 1px 0 #fff;
 }
 
 header {
@@ -62,7 +64,6 @@ header li a {
   font-size: 16px;
   line-height: 30px;
   text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -71,7 +72,7 @@ header li a:hover {
   color: #333;
 }
 
-header input[type="checkbox"] {
+input#control-nav {
   visibility: hidden;
   position: absolute;
   left: -9999px;
@@ -101,43 +102,64 @@ section p {
   padding: 0 0 20px;
 }
 
+.highlights {
+  position: relative;
+}
+
+.highlights input {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.highlights-item {
+  float: left;
+  margin: 0 0 0 2%;
+  width: 32%;
+}
+
+.highlights-item:first-of-type {
+  margin-left: 0;
+}
+
+.highlights-item img {
+  display: block;
+  width: 100%;
+  margin: 0 0 5px;
+}
+
+.highlights-item p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.highlights-buttons {
+  display: none;
+  clear: both;
+  text-align: center;
+}
+
+.highlights-buttons label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 10px; 
+  border-radius: 10px;
+  background-color: #ccc;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-indent: -9999px;
+  -webkit-transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
+}
+
+.highlights-buttons label:hover {
+  background-color: #777;
+}
+
 @media screen and (max-width: 767px) {
-  header .control-nav { /* label icon */
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    display: block;
-    width: 30px;
-    padding: 5px 0;
-    border: solid #333;
-    border-width: 3px 0;
-    z-index: 2;
-    cursor: pointer;
-  }
-
-  header .control-nav:before {
-    content: "";
-    display: block;
-    height: 3px;
-    background: #333;
-  }
-
-  header .control-nav-close {
-    position: fixed; /* label layer */
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    z-index: 1;
-    background: rgba(0,0,0,0.4);
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-    -webkit-transform: translate(100%, 0);
-    -ms-transform: translate(100%, 0);
-    transform: translate(100%, 0);
-  }
-
   header nav {
     position: fixed;
     top: 0;
@@ -155,11 +177,11 @@ section p {
     transform: translate(100%, 0);
   }
 
-  header ul.l2 {
+  header ul.list-auto {
     padding: 0;
   }
 
-  header ul.l2 li {
+  header ul.list-auto li {
     width: 100%;
     border: solid #ccc;
     border-width: 0 0 1px;
@@ -173,27 +195,58 @@ section p {
     background-color: #ccc;
   }
 
+  .control-nav { /* label icon */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: block;
+    width: 30px;
+    padding: 5px 0;
+    border: solid #333;
+    border-width: 3px 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .control-nav:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #333;
+  }
+
+  .control-nav-close {
+    position: fixed; /* label layer */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+    background: rgba(0,0,0,0.4);
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+
   /* checked nav */
-  #control-nav {
+  input#control-nav {
     visibility: visible;
   }
 
-  #control-nav:focus ~ .control-nav {
+  input#control-nav:focus ~ .control-nav {
     border-color: #000;
     box-shadow: 0px 0px 9px rgba(0,0,0,0.3);
   }
 
-  #control-nav:focus ~ .control-nav:before {
+  input#control-nav:focus ~ .control-nav:before {
     background: #000;
   }
 
-  #control-nav:checked ~ .control-nav-close {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
-  #control-nav:checked ~ nav {
+  input#control-nav:checked ~ nav,
+  input#control-nav:checked ~ .control-nav-close {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
@@ -206,11 +259,61 @@ section p {
   section {
     padding: 30px 15px 10px;
   }
+
+  .highlights-item {
+    width: 100%;
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  .highlights-item p {
+    opacity: 0;
+    -webkit-transition: opacity 500ms 500ms ease-in-out;
+    transition: opacity 500ms 500ms ease-in-out;
+  }
+
+  .highlights-buttons {
+    display: block;
+  }
+
+  .highlights input {
+    visibility: visible;
+  }
+
+  /*checked*/
+  .highlights input:checked + div {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  .highlights input:checked + div p {
+    opacity: 1;
+  }
+
+  .highlights input:nth-of-type(1):checked ~ .highlights-buttons label:nth-child(1),
+  .highlights input:nth-of-type(2):checked ~ .highlights-buttons label:nth-child(2),
+  .highlights input:nth-of-type(3):checked ~ .highlights-buttons label:nth-child(3) {
+    background-color: #000
+  }
 }
 
 @media screen and (max-width: 480px) {
   header h1 {
     font-size: 20px;
-    line-height: 40px
+    line-height: 40px;
   }
 }

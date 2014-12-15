@@ -1,129 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Responsive Header only CSS of El Chavo</title>
+    <title>Creating three highlights responsive with navigation only CSS of El Chavo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
     
-    <meta name="description" content="See this example of responsive header without using javascript. Using only html and css. by Palloi Hofmann">
+    <meta name="description" content="See this example of responsive three highlights without using javascript. Using only html and css. by Palloi Hofmann">
     <meta name="keywords" content="css4html, css+for+html, css 4 html, css4, css4 html, css, css3, html, html5" />
 
-    <meta property="og:image" content="http://palloi.github.io/responsive-header-only-css/assets/images/image-shared.png" />
+    <meta property="og:image" content="http://palloi.github.io/responsive-header-only-css/assets/images/image-shared-2.png" />
     <meta property="og:keywords" content="css4html, css+for+html, css 4 html, css4, css4 html, css, css3, html, html5" />
-    <meta property="og:description" content="See this example of responsive header without using javascript. Using only html and css. by Palloi Hofmann" />
+    <meta name="description" content="See this example of responsive three highlights without using javascript. Using only html and css. by Palloi Hofmann">
 
-    <style type="text/css">
-      html, body, div, span, applet, object, iframe,
-      h1, h2, h3, h4, h5, h6, hr, p, blockquote, pre,
-      a, abbr, acronym, address, big, cite, code,
-      del, dfn, em, font, img, ins, kbd, q, s, samp,
-      small, strike, strong, sub, sup, tt, var,
-      b, u, i, center,
-      dl, dt, dd, ol, ul, li,
-      fieldset, form, label, legend,
-      table, caption, tbody, tfoot, thead, tr, th, td {
-        margin:0; padding:0; border:0; background:transparent;
-        /*vertical-align: baseline;*/
-      }
-
-      /* lists */
-      .list-full, .list-full li,
-      .list-auto, .list-auto li { width: 100%; float: left; display: block; position: relative; }
-      .list-auto, .list-auto li { width: auto; }
-
-      /* floats */
-      .float-l { float: left; }
-      .float-r { float: right; }
-
-      body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #333;
-        text-shadow: 0 1px 0 #fff;
-      }
-
-      header {
-        min-height: 60px;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        border-bottom: 1px solid #ccc;
-        background: #ECECEC;
-        z-index: 2;
-      }
-
-      header h1 {
-        padding: 10px 0 0 10px;
-      }
-
-      header h1 a {
-        color: #333;
-      }
-
-      header ul {
-        padding: 15px 10px 0 0;
-      }
-
-      header li {
-        border-left: 1px solid #ccc;
-      }
-
-      header li:first-child {
-        border: none;
-      }
-
-      header li a {
-        display: block;
-        padding: 0 10px;
-        color: #999;
-        font-size: 16px;
-        line-height: 30px;
-        text-decoration: none;
-        -webkit-transition: all 300ms ease;
-        transition: all 300ms ease;
-      }
-
-      header li a:hover {
-        color: #333;
-      }
-
-      input#control-nav {
-        visibility: hidden;
-        position: absolute;
-        left: -9999px;
-        opacity: 0;
-      }
-
-      /* content */
-      section {
-        padding: 80px 20px 50px;
-        border-top: 1px solid #ccc;
-        font-size: 20px;
-        line-height: 24px;
-      }
-
-      section:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
-
-      section img {
-        width: 44%;
-        margin: 0 0 10px 4%;
-      }
-
-      section p {
-        padding: 0 0 20px;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css" />
   </head>
   <body>
     <header>
       <h1 class="float-l">
-        <a href="#" title="A TURMA DO CHAVES">A TURMA DO CHAVES</a>
+        <a href="#" title="Titulo do Site">A TURMA DO CHAVES</a>
       </h1>
+      
+      <input type="checkbox" id="control-nav" />
+      <label for="control-nav" class="control-nav"></label>
+      <label for="control-nav" class="control-nav-close"></label>
 
       <nav class="float-r">
         <ul class="list-auto">
@@ -144,7 +44,6 @@
     </header>
 
     <section id="Chaves">
-      <img src="assets/images/chaves.jpg" class="float-r" />
       <p>
         <strong>Interpretado por:</strong> Roberto Goméz Bolaños.
       </p>
@@ -154,6 +53,32 @@
       <p>
         <strong>Frases:</strong> "Isso, isso, isso!" - "Foi sem querer querendo!" - "Ninguém tem paciência comigo!" - "É que me escapuliu!" - "Zas, zas e zas...
       </p>
+
+      <div class="highlights">
+        <input type="radio" id="radio-img1" name="highlights" checked="checked" />
+        <div class="highlights-item">
+          <img src="assets/images/chaves.jpg" />
+          <p>Olha o Chaves sorrindo</p>
+        </div>
+        
+        <input type="radio" id="radio-img2" name="highlights" />
+        <div class="highlights-item">
+          <img src="assets/images/chaves-2.jpg" />
+          <p>Pensando na Paty</p>
+        </div>
+        
+        <input type="radio" id="radio-img3" name="highlights" />
+        <div class="highlights-item">
+          <img src="assets/images/chaves-3.jpg" />
+          <p>Quero tanto esse sanduiche iche iche</p>
+        </div>
+
+        <div class="highlights-buttons">
+          <label for="radio-img1">Image 1</label>
+          <label for="radio-img2">Image 2</label>
+          <label for="radio-img3">Image 3</label>
+        </div>
+      </div>
     </section>
 
     <section id="Chiquinha">
