@@ -294,6 +294,7 @@ section p {
     position: relative;
     opacity: 1;
     visibility: visible;
+    z-index: 1;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
