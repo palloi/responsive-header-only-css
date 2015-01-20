@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creating responsive modal with only CSS of El Chavo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    
+    <meta name="description" content="See this example of responsive three highlights without using javascript. Using only html and css. by Palloi Hofmann">
+    <meta name="keywords" content="css4html, css+for+html, css 4 html, css4, css4 html, css, css3, html, html5" />
+
+    <meta property="og:image" content="http://palloi.github.io/responsive-header-only-css/assets/images/image-shared-2.png" />
+    <meta property="og:keywords" content="css4html, css+for+html, css 4 html, css4, css4 html, css, css3, html, html5" />
+    <meta name="description" content="See this example of responsive three highlights without using javascript. Using only html and css. by Palloi Hofmann">
+
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="float-l">
+        <a href="#" title="Titulo do Site">A TURMA DO CHAVES</a>
+      </h1>
+      
+      <input type="checkbox" id="control-nav" />
+      <label for="control-nav" class="control-nav"></label>
+      <label for="control-nav" class="control-nav-close"></label>
+
+      <nav class="float-r">
+        <ul class="list-auto">
+          <li>
+            <a href="#Chaves" title="Chaves">Chaves</a>
+          </li>
+          <li>
+            <a href="#Chiquinha" title="Chiquinha">Chiquinha</a>
+          </li>
+          <li>
+            <a href="#Seu-Madruga" title="Seu Madruga">Seu Madruga</a>
+          </li>
+          <li>
+            <a href="#Quico" title="Quico">Quico</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="Chaves">
+      <p>
+        <strong>Interpretado por:</strong> Roberto Goméz Bolaños.
+      </p>
+      <p>
+        <strong>Descrição:</strong> Chaves é o personagem principal que dá nome ao seriado. Um garoto pobre, órfão e muito atrapalhado, sempre com as mesmas roupas velhas e apertadas e que sempre entra no seu famoso barril para se esconder. Ao contrário do que todos pensam, ele não mora no barril e seu nome não é Chaves. Ele mora na casa número 8 e seu verdadeiro nome é um mistério, pois sempre que perguntam seu nome, outra pessoa aparece e interrompe a conversa.
+      </p>
+      <p>
+        <strong>Frases:</strong> "Isso, isso, isso!" - "Foi sem querer querendo!" - "Ninguém tem paciência comigo!" - "É que me escapuliu!" - "Zas, zas e zas...
+      </p>
+
+      <div class="highlights">
+        <input type="radio" id="radio-img1" name="highlights" checked="checked" />
+        <div class="highlights-item">
+          <img src="assets/images/chaves.jpg" />
+          <p>Olha o Chaves sorrindo</p>
+          <label class="highlights-button" for="modal_chaves">Ver fotos do Chaves</label>
+        </div>
+        
+        <input type="radio" id="radio-img2" name="highlights" />
+        <div class="highlights-item">
+          <img src="assets/images/chaves-2.jpg" />
+          <p>Pensando na Paty</p>
+          <label class="highlights-button" for="modal_chaves2">Ver fotos da Paty</label>
+        </div>
+        
+        <input type="radio" id="radio-img3" name="highlights" />
+        <div class="highlights-item">
+          <img src="assets/images/chaves-3.jpg" />
+          <p>Quero tanto esse sanduiche iche iche</p>
+          <label class="highlights-button" for="modal_chaves3">Ver fotos do sanduiche</label>
+        </div>
+
+        <div class="highlights-buttons">
+          <label for="radio-img1">Image 1</label>
+          <label for="radio-img2">Image 2</label>
+          <label for="radio-img3">Image 3</label>
+        </div>
+      </div>
+
+      <input type="checkbox" id="modal_chaves" />
+      <div class="modal">
+        <div class="modal-content">
+          <h4>Foto Grande do Chaves</h4>
+          <img src="assets/images/chaves-fotos-raras-4.jpg" />
+        </div>
+        <label class="modal-close" for="modal_chaves"></label>
+      </div>
+
+      <input type="checkbox" id="modal_chaves2" />
+      <div class="modal">
+        <div class="modal-content">
+          <h4>Foto Grande da Paty</h4>
+          <img src="assets/images/paty_do_chaves_rep2.jpg" />
+          <img src="assets/images/paty_do_chaves_rep3.png" />
+          <img src="assets/images/13paty.jpg" />
+        </div>
+        <label class="modal-close" for="modal_chaves2"></label>
+      </div>
+    </section>
+
+    <section id="Chiquinha">
+      <img src="assets/images/chiquinha.jpg" class="float-r" />
+      <p>
+        <strong>Interpretado por:</strong> Maria Antonieta de las Nieves.
+      </p>
+      <p>
+        <strong>Descrição:</strong> É uma menina baixinha, sardenta e muito esperta, sempre  arranjando uma maneira de se aproveitar da ingenuidade (para não dizer burrice) do Chaves e do Quico.
+      </p>
+      <p>
+        <strong>Frases:</strong> "Papaízinho lindo do meu coração..." / "...me dá um dinheiro para mim comprar um pirulito?" / "O que você tem de burro, você tem de burro" / "Pois é, pois é, pois é...".
+      </p>
+      <p>
+        <strong>Apelidos:</strong> Micróbio, balguelinha sem-graça, sardenta, etc...
+      </p>
+    </section>
+
+    <section id="Seu-Madruga">
+      <img src="assets/images/seumadruga.jpg" class="float-r" />
+      <p>
+        <strong>Interpretado por:</strong> Ramón Gómez Valdez Castillo.
+      </p>
+      <p>
+        <strong>Descrição:</strong> Talvez o personagem favorito dos fãs  do seriado, ele é um cara muito simples que está sempre fazendo bicos e trambiques para sobreviver. Vive fugindo do Senhor Barriga para não pagar o aluguel da sua casa onde mora junto a sua filha Chiquinha. Sempre foge também da Dona Florinda para não apanhar, pois sempre leva culpa pelas trapalhadas feitas pelo Chaves.
+      </p>
+      <p>
+        <strong>Frases:</strong> "Que que foi, que que foi, que que há?" / "Só não te dou outra porque..." / "Não existe trabalho ruim, ruim é ter que trabalhar!" / "As pessoas boas devem amar seus inimigos."
+      </p>
+      <p>
+        <strong>Apelidos:</strong> Chimpanzé reumático, lombriga esticada, pernas de saracura...
+      </p>
+    </section>
+
+    <section id="Quico">
+      <img src="assets/images/quico.png" class="float-r" />
+      <p>
+        <strong>Interpretado por:</strong> Carlos Villangrán Eslavan.
+      </p>
+      <p>
+        <strong>Descrição:</strong> É um garoto bobo, mimado e bochechudo. Tem nove anos de idade e é o melhor amigo  do Chaves. Mora na casa número 14 com sua mãe, Dona Florinda. Está sempre esperando por sua bola quadrada.
+      </p>
+      <p>
+        <strong>Frases:</strong> "Cale-se, cale-se, cale-se, você me deixa louco!" / "Gentalha, Gentalha, pruuuuuf!" / "Você Não vai com a minha cara?" / "Você quer? Então compra!" / "Mamãe!" / "Da parte de quem?" / "Que coisa, não?"
+      </p>
+      <p>
+        <strong>Apelidos:</strong> bochechas de mamão macho, bochechas de bulldog belho, mocorongo almofadinha e etc...
+      </p>
+    </section>
+
+    <input type="checkbox" id="modal_chaves3" />
+    <div class="modal">
+      <div class="modal-content">
+        <h4>Foto Grande do shanduiche</h4>
+        <img src="assets/images/chaves-sand.jpg" />
+        <p>Que bonita a sua roupa, que roupinha mucho louca, nela é tudo remendado, não vale nenhum centavo, mas agrada a quem olhar. Eu sou o famoso Chaves,todos dizem que minha roupa é remendada. Faço tremer as bases com as minhas peraltices preparadas. Dizem a todo instante, que ele é mais espaçoso que um trem! Que ela é azul...crinante, e que tão chata como ela não há ninguém!</p>
+        <img src="assets/images/chaves-sand2.jpg" />
+        <p>Se você é jovem ainda, jovem ainda, jovem ainda, amanhã velho será, velho será, velho será. A menos que o coração, que o coração suspeite da juventude, que nunca morrerá! Existem jovens de oitenta e tantos anos e também velhos de apenas vinte e seis. Porque velhice não significa nada, e a juventude volta sempre outra vez! E você é tão jovem quanto sente; Pode apostar: é jovem pra valer. E velho é quem tem sempre a dureza e também é quem deixa de aprender. Não diga não à vida que te espera para festejar a alegria de viver dar à vencer a luz do seu caminho, e você vai com isso entender.</p>
+      </div>
+      <label class="modal-close" for="modal_chaves3"></label>
+    </div>
+  </body>
+</html>
